@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Todo</title>
+  </head>
+  <body>
+    <style>
+      .checked {
+        text-decoration: line-through;
+      }
+    </style>
+    <div>
+      <input title="todo" type="text" class="new" />
+      <button onclick="addTodo()">Add todo</button>
+
+      <ul class="todolist"></ul>
+    </div>
+    <script>
+      let newtodo = document.querySelector(".new");
+      let todolist = document.querySelector(".todolist");
+
+      function addTodo() {
+        if (newtodo.value === "") {
+          alert("Please enter a todo");
+        } else {
+          let li = document.createElement("li");
+          li.innerHTML = newtodo.value;
+          todolist.appendChild(li);
+        }
+        newtodo.value = "";
+      }
+    </script>
+  </body>
+</html>
